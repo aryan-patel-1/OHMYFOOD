@@ -172,3 +172,98 @@
     font-weight: 400;
     margin-right: 31px;
 }
+// Media queries pour tailles d'écran
+
+// Écran >= 1024px
+@media (min-width: 1024px) {
+    .menu__content {
+        max-width: calc(120% - 460px);
+        margin: -20px auto 0;
+        overflow: hidden;
+        margin-bottom: 13px;
+    }
+
+    .menu__info {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .menu__title {
+        margin-right: 10px;
+    }
+
+    .plate {
+        overflow: hidden;
+        width: calc(75% - 65px);
+        height: auto;
+        margin: 20px auto;
+        padding: 15px;
+        border-radius: 8px;
+        background-color: #fffefe;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .menu__title {
+        font-family: "Shrikhand", cursive;
+        font-weight: normal;
+        font-size: 28px;
+        margin-bottom: 0;
+        margin-left: 1px;
+    }
+
+    .underline-title {
+        margin-left: 15%;
+    }
+}
+
+
+// Écran <= 1024px
+@media (max-width: 1024px) {
+    .plate {
+        width: calc(100% - 60px);
+        height: auto;
+        margin: 10px auto;
+        overflow: hidden;
+    }
+}
+
+// Écran entre 377px et 1023px
+@media (min-width: 377px) and (max-width: 1023px) {
+    .navbar {
+        left: 20px;
+        font-size: 1.5em;
+    }
+
+    .menu__banner {
+        height: 250px;
+    }
+
+    .menu__content {
+        margin-top: -50px;
+        padding: 1rem;
+    }
+
+    .menu__title {
+        font-size: 24px;
+        margin-left: 40%;
+    }
+
+    .underline-title {
+        font-size: 14px;
+        margin-left: 10px;
+    }
+
+    .plate {
+        width: calc(100% - 40px);
+        padding: 10px;
+        margin: 10px auto;
+        border-radius: 8px;
+    }
+
+    .plate__confirmation {
+        font-size: 18px;
+        width: 50px;
+    }
+
+}
