@@ -336,4 +336,37 @@ a {
   margin-left: 10px;
 }
 
+.plate__confirmation {
+  background-color: #99E2D0;
+  color: #FFF;
+  font-size: 20px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 11px;
+  width: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: -12px -72px -12px 16px;
+  transition: margin-right 600ms ease;
+}
+
+.plate:hover {
+  box-shadow: 0 15px 20px rgba(0, 0, 0, 0.2);
+}
+
+.plate:hover .plate__confirmation {
+  margin-right: -0.75rem;
+}
+
+.btn--py {
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+.fa-regular, .far {
+  font-family: "Font Awesome 6 Free";
+  font-weight: 400;
+  margin-right: 31px;
+}
+
 /*# sourceMappingURL=restaurant.css.map */

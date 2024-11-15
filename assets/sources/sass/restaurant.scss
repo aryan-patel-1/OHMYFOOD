@@ -135,3 +135,40 @@
     align-self: flex-end;
     margin-left: 10px;
 }
+
+// Bouton de confirmation du plat
+.plate__confirmation {
+    background-color: #99E2D0;
+    color: #FFF;
+    font-size: 20px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 11px;
+    width: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: -12px -72px -12px 16px;
+    transition: margin-right 600ms ease;
+}
+
+// Animation au survol du plat
+.plate:hover {
+    box-shadow: 0 15px 20px rgba(0, 0, 0, 0.2);
+}
+
+.plate:hover .plate__confirmation {
+    margin-right: -0.75rem;
+}
+
+// Adaptation des boutons
+.btn--py {
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+// Style des icônes Font Awesome
+.fa-regular, .far {
+    font-family: "Font Awesome 6 Free";
+    font-weight: 400;
+    margin-right: 31px;
+}
