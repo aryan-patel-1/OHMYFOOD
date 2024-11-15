@@ -1,4 +1,5 @@
 @charset "UTF-8";
+/* Global Styles */
 * {
   margin: 0;
   padding: 0;
@@ -6,9 +7,13 @@
   text-decoration: none;
 }
 
+.fa-utensils {
+  padding: 0px 2px 0px 4px;
+}
+
 body {
   height: 100%;
-  font-family: "roboto", "sans-serif";
+  font-family: "Roboto", sans-serif;
 }
 
 a {
@@ -16,39 +21,52 @@ a {
   text-decoration: none;
 }
 
-.etape {
-  background-color: #F6F6F6;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15); /* Ombre */
-  transition: background-color 0.3s ease;
-}
-
+/* Header */
 .header {
   position: relative;
   z-index: 1;
   width: 100%;
   height: 60px;
   display: flex;
-  justify-content: center; /* Centrer le logo */
+  justify-content: center;
   align-items: center;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
-  /* Logo */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
-.header .logo {
-  max-width: 150px; /* Taille du logo pour mobile */
+
+.logo {
+  max-width: 150px;
   height: auto;
 }
 
-.btn { /*bouton*/
+/* Restaurant Address */
+.restaurant__address input {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  color: #000;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+/* Etape */
+.etape {
+  background-color: #F6F6F6;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+  transition: background-color 0.3s ease; /* Transition douce sur la couleur de fond */
+}
+
+/* Buttons */
+.btn {
   display: inline-block;
   padding: 16px 24px;
   border-radius: 32px;
   color: #FFF;
   position: relative;
   z-index: 1;
-  background: linear-gradient(180deg, #FF79DA 0%, #9356DC 100%);
-  box-shadow: 0 5px 7px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(180deg, #FF79DA 0%, #9356DC 100%); /* Fond en dégradé pour les boutons */
+  box-shadow: 0 5px 7px rgba(0, 0, 0, 0.2); /* Ombre portée sur les boutons */
 }
-.btn .btn:after { /*bouton effet*/
+.btn:after {
   content: "";
   position: absolute;
   top: 0;
@@ -61,12 +79,11 @@ a {
   z-index: -1;
   transition: opacity 0.3s ease;
 }
-
-.btn:hover { /*bouton effet*/
+.btn:hover {
   box-shadow: 0 15px 20px rgba(0, 0, 0, 0.2);
 }
-.btn:hover .btn:hover:after { /*bouton effet*/
-  opacity: 1;
+.btn:hover:after {
+  opacity: 1; /* Affiche l'effet de survol */
 }
 
 .btn-like {
@@ -76,81 +93,132 @@ a {
   padding: 10px;
   cursor: pointer;
   font-size: 30px;
-  transition: trazznsform 0.3s ease;
+  transition: transform 0.3s ease;
 }
-
 .btn-like:hover {
-  transform: scale(1.2); /* Effet de survol */
+  transform: scale(1.2); /* Agrandissement au survol */
 }
-
-/* Changer la couleur de l'icône au survol */
 .btn-like:hover .icon-heart {
-  color: #9356DC; /* Couleur violet */
+  color: #9356DC; /* Change la couleur de l'icône au survol */
 }
 
-.footer-title { /* mettre la bonne police d'écriture et ajouter une margin */
+/* Icon Button */
+.btn-like i {
+  transition: color 0.3s ease; /* Transition douce sur la couleur de l'icône */
+}
+
+.btn-like:hover i {
+  background: linear-gradient(to left, #9356dc, #b35cdc, #cf64dc, #e86edb, #ff79da); /* Effet de dégradé au survol sur l'icône */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+  transition: background 2s ease, opacity 0.3s ease, background-size 2s ease;
+}
+
+/* Icon Mobil */
+.icon-mobil {
+  color: #9356DC;
+}
+
+.etape:hover .icon-mobil {
+  color: #FF79DA;
+}
+
+/* Footer */
+.footer-title {
   font-family: "Shrikhand", cursive;
   margin-bottom: 20px;
 }
 
-.footer { /* mettre un fond gris en mettant le texte en blanc et ajouter de l'espace */
+.footer {
   background-color: #353535;
   padding: 20px;
   color: white;
   margin-top: -13px;
 }
 
-.footer__link { /* ajuster les liens des textes en mettant des espacements */
+.footer__link {
   list-style: none;
   padding: 0;
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 10px; /* Espacement entre les éléments du footer */
 }
-
-.footer__link li { /* enlever la marge des li */
+.footer__link li {
   margin: 0;
 }
-
-.footer__link a { /* texte des liens en blanc */
+.footer__link a {
   color: white;
   text-decoration: none;
 }
-
 .footer__link a:hover {
-  text-decoration: underline;
+  text-decoration: underline; /* Décoration de texte au survol des liens */
 }
 
-.btn-like {
-  background: none; /* Pas de fond pour que le bouton soit transparent */
-  border: none; /* Pas de bordure pour un look propre */
-  cursor: pointer; /* Change le curseur pour indiquer que c'est cliquable */
-  font-size: 24px; /* Taille de l'icône */
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  transition: color 0.3s ease; /* Transition douce pour la couleur */
+@media (min-width: 768px) {
+  .footer__link {
+    flex-direction: row;
+    justify-content: flex-start; /* Aligne les liens à gauche */
+    gap: 15px; /* Espacement réduit entre les liens */
+  }
 }
-
-.btn-like i {
-  transition: color 0.3s ease; /* Transition de la couleur au survol */
+@media (min-width: 1444px) {
+  .footer__link {
+    flex-direction: row;
+    justify-content: flex-start; /* Aligne les liens à gauche */
+    gap: 20px; /* Espacement réduit entre les liens */
+    order: 1;
+    margin-left: 47%;
+    margin-top: -45px;
+    margin-bottom: 19px;
+  }
+  .footer-title {
+    order: 2;
+    margin-left: 87%;
+    margin-top: 12px;
+  }
+  .footer__link-fa {
+    margin-right: 50px !important; /* Positionnement de certains éléments avec priorité */
+  }
 }
-
-.btn-like:hover i {
-  /* Effet de dégradé en fond avec des couleurs définies */
-  background: linear-gradient(to left, #9356dc, #b35cdc, #cf64dc, #e86edb, #ff79da);
-  /* Utilisation de -webkit- pour les navigateurs basés sur WebKit (Safari, Chrome) */
-  -webkit-background-clip: text; /* Applique le dégradé uniquement au texte */
-  -webkit-text-fill-color: transparent; /* Rend le texte transparent pour voir le dégradé */
-  /* Application du poids de la police pour plus de contraste au survol */
-  font-weight: bold;
+@media (max-width: 1440px) and (min-width: 769px) {
+  .footer__link,
+  .footer-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 0;
+    margin-right: 0; /* Centre le contenu entre 769px et 1440px */
+  }
+  .footer__link {
+    flex-direction: row;
+    gap: 20px; /* Espacement ajusté */
+  }
+  .footer__link-fa {
+    margin-top: -10px; /* Ajuste la position du footer */
+  }
 }
-
+@media (max-width: 1625px) and (min-width: 1445px) {
+  .footer__link,
+  .footer-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 0;
+    margin-right: 0; /* Centrer le contenu dans cet intervalle de taille */
+  }
+  .footer__link {
+    flex-direction: row;
+    gap: 20px; /* Espacement ajusté entre les liens */
+    margin-top: -12px; /* Ajuste la position du footer */
+  }
+}
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  text-decoration: none;
 }
 
 :root {
@@ -182,6 +250,7 @@ a { /* texte en noir sans style */
   font-weight: 500;
   padding: 16px;
   margin-bottom: 35px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
 }
 .restaurant .restaurant__address i { /*barre de recherche lieux icon */
   background-color: #EAEAEA;
@@ -200,11 +269,15 @@ a { /* texte en noir sans style */
   padding: 0 20px;
 }
 
-.etape {
-  background-color: #F6F6F6;
+.fonction {
+  margin-top: 40px;
+  margin-left: 20px !important;
+  margin-bottom: 30px;
+}
+
+.etape { /*etape mobolefirst */
   padding: 25px 10px;
-  margin: 16px auto; /* Marge en haut et en bas, et centrage horizontal */
-  margin-left: 25px; /* Marge à gauche */
+  margin: 16px 0 20px 13px;
   border-radius: 24px;
   position: relative;
   cursor: pointer;
@@ -212,10 +285,12 @@ a { /* texte en noir sans style */
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
-  flex-wrap: nowrap;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
-  transition: all 0.3s ease;
-  max-width: 90%; /* Limite la largeur de l'élément à 90% de l'écran */
+  width: 322.49px;
+  height: 72.38px;
+  left: 13px;
+}
+.etape:hover {
+  background-color: #F5EDFF;
 }
 .etape .icon-mobil {
   margin: 0 20px 0 26px;
@@ -227,7 +302,7 @@ a { /* texte en noir sans style */
 }
 .etape .etape-1 {
   background: #9356DC;
-  color: #F6F6F6;
+  color: #FFF;
   width: 26px;
   height: 26px;
   line-height: 26px;
@@ -241,11 +316,11 @@ a { /* texte en noir sans style */
   color: #9356DC;
 }
 
-/*section card */
+/* Section cards */
 .cards {
   background-color: #F6F6F6;
-  margin-top: -25px;
-  padding-bottom: 55px;
+  margin-top: 78px;
+  padding-bottom: 55px; /*metre 55px despace evant le footer*/
 }
 
 .rs {
@@ -258,7 +333,7 @@ a { /* texte en noir sans style */
   margin-bottom: 16px;
   margin-left: 16px;
   margin-right: 16px;
-  background-color: #F6F6F6;
+  background-color: white;
   position: relative;
   border-radius: 16px;
   display: flex;
@@ -270,13 +345,13 @@ a { /* texte en noir sans style */
 }
 .card .card__img {
   width: 100%;
-  height: 200px;
+  height: 152px;
   object-fit: cover;
   border-top-left-radius: 16px;
   border-top-right-radius: 16px;
 }
 .card .card__body {
-  padding: 5px;
+  padding: 10px;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -289,7 +364,7 @@ a { /* texte en noir sans style */
   margin-bottom: 5px;
 }
 .card .card__lieux {
-  font-weight: 900;
+  font-weight: 300;
   text-transform: capitalize;
 }
 .card .card__new {
@@ -300,22 +375,131 @@ a { /* texte en noir sans style */
   position: absolute;
   top: 15px;
   right: 15px;
-  box-shadow: 0 15px 15px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
 }
 .card .card:hover {
   box-shadow: 0 15px 20px rgba(0, 0, 0, 0.2);
 }
 
-@media (min-witdh: 1024) {
+/* Styles pour écran de bureau (min-width: 1024px) */
+@media (min-width: 1024px) {
   .fonction {
-    margin-left: 90px !important;
-    margin-bottom: -54px;
+    margin-left: 12.4% !important;
+    margin-bottom: -25px; /* Ajuste la marge du bas */
   }
-  .fonction ol {
+  .fonctionement ol {
     display: flex;
     justify-content: center;
-    padding: 65px;
+    padding: 40px;
     margin: 10px;
+    list-style: none;
+  }
+  .etape {
+    width: 25% !important;
+    height: 72.37px;
+    margin: 20px;
+    padding: 12px;
+    background-color: #F6F6F6;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+    transition: background-color 0.3s ease;
+    font-size: 14px;
+  }
+  .rs {
+    margin-left: 12.4%;
+    height: 0px;
+    margin-top: -30px;
+    margin-bottom: 28px;
+  }
+  .cards > div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 2400px !important;
+    margin: 0 auto;
+  }
+  .card {
+    flex: 0 0 calc(40% - 65px); /* Ajuste la taille des cartes pour deux colonnes */
+    margin: 20px;
+    max-width: 900px !important;
+    min-height: 1px;
+    box-sizing: border-box;
+  }
+  .card__img {
+    width: 100%;
+    height: 230px !important;
+    object-fit: cover;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .fonction {
+    margin-left: 3% !important;
+    margin-bottom: 10px;
+  }
+  .rs {
+    margin-left: 3%;
+  }
+  .etape {
+    width: calc(100% - 50px);
+    max-width: none;
+    margin: 10px auto 20px;
+    padding: 12px;
+    background-color: #F6F6F6;
+    border-radius: 20px;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+    transition: background-color 0.3s ease;
+    font-size: 14px;
+    text-align: center;
+  }
+  .cards > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  .card {
+    width: calc(100% - 50px);
+    margin: 0 auto;
+    max-width: none;
+  }
+  .card__img {
+    height: 200px !important;
+  }
+}
+@media (min-width: 377px) and (max-width: 767px) {
+  /* Ajustement des sections générales */
+  .fonction {
+    margin-left: 5%; /* Réduction de la marge pour écrans plus petits */
+    margin-bottom: 15px;
+  }
+  /* Style pour les étapes */
+  .etape {
+    width: calc(100% - 50px);
+    max-width: none;
+    margin: 10px auto 20px;
+    padding: 10px;
+    background-color: #F6F6F6;
+    border-radius: 20px;
+    align-items: center;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    font-size: 13px;
+    text-align: center;
+  }
+  /* Configuration des cartes */
+  .card__img {
+    height: 200px !important;
+    width: 100%;
+    object-fit: cover;
+  }
+  /* Autres éléments ou sections pour cet écran */
+  .footer {
+    padding: 15px;
+    text-align: center;
   }
 }
 

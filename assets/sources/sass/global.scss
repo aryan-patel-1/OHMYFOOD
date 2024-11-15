@@ -1,149 +1,234 @@
-
-
-
+/* Global Styles */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  text-decoration: none;
-
+  text-decoration: none; 
 }
 
-body { 
+.fa-utensils {
+  padding: 0px 2px 0px 4px; 
+}
+
+body {
   height: 100%;
-  font-family: "roboto","sans-serif" ;
+  font-family: 'Roboto', sans-serif; 
 }
 
 a {
   color: black;
-  text-decoration: none;
-  
-}
-.etape{
-  background-color: #F6F6F6; 
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15); /* Ombre */
-  transition: background-color 0.3s ease;
+  text-decoration: none; 
 }
 
+/* Header */
 .header {
   position: relative;
   z-index: 1;
   width: 100%;
   height: 60px;
   display: flex;
-  justify-content: center; /* Centrer le logo */
+  justify-content: center;
   align-items: center;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
-
-  /* Logo */
-  .logo {
-    max-width: 150px; /* Taille du logo pour mobile */
-    height: auto;
-  }
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); 
 }
 
-.btn { /*bouton*/
+.logo {
+  max-width: 150px;
+  height: auto; 
+}
+
+/* Restaurant Address */
+.restaurant__address input {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  color: #000;
+  font-size: 12px;
+  font-weight: 700; 
+}
+
+/* Etape */
+.etape {
+  background-color: #F6F6F6;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+  transition: background-color 0.3s ease; /* Transition douce sur la couleur de fond */
+}
+
+/* Buttons */
+.btn {
   display: inline-block;
   padding: 16px 24px;
-  border-radius: 32px; 
+  border-radius: 32px;
   color: #FFF;
   position: relative;
   z-index: 1;
-  background: linear-gradient(180deg, #FF79DA 0%, #9356DC 100%);
-  box-shadow: 0 5px 7px rgba(0, 0, 0, 0.2);
-  .btn:after { /*bouton effet*/
+  background: linear-gradient(180deg, #FF79DA 0%, #9356DC 100%); /* Fond en dégradé pour les boutons */
+  box-shadow: 0 5px 7px rgba(0, 0, 0, 0.2); /* Ombre portée sur les boutons */
+  
+  &:after {
     content: "";
     position: absolute;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
-    border-radius: 32px; 
-    background: linear-gradient(180deg, #ff88de 0%, #a16be0 100%);
+    border-radius: 32px;
+    background: linear-gradient(180deg, #ff88de 0%, #a16be0 100%); 
     opacity: 0;
     z-index: -1;
     transition: opacity 0.3s ease;
+  }
+
+  &:hover {
+    box-shadow: 0 15px 20px rgba(0, 0, 0, 0.2); 
     
+    &:after {
+      opacity: 1; /* Affiche l'effet de survol */
+    }
   }
+}
+
+.btn-like { 
+  position: relative;
+  border: none;
+  background: transparent;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 30px;
+  transition: transform 0.3s ease;
   
+  &:hover {
+    transform: scale(1.2); /* Agrandissement au survol */
+    
+    .icon-heart {
+      color: #9356DC; /* Change la couleur de l'icône au survol */
+    }
   }
-  .btn:hover { /*bouton effet*/
-    box-shadow: 0 15px 20px rgba(0, 0, 0, 0.2);
-    .btn:hover:after { /*bouton effet*/
-      opacity: 1;}
-  }
-
-
-  .btn-like {
-    position: relative;
-    border: none;
-    background: transparent; 
-    padding: 10px; 
-    cursor: pointer; 
-    font-size: 30px;
-    transition: trazznsform 0.3s ease;
 }
 
-.btn-like:hover {
-    transform: scale(1.2); /* Effet de survol */
-}
-
-/* Changer la couleur de l'icône au survol */
-.btn-like:hover .icon-heart {
-    color: #9356DC; /* Couleur violet */
-}
-.footer-title { /* mettre la bonne police d'écriture et ajouter une margin */
-  font-family: "Shrikhand", cursive; 
-  margin-bottom: 20px; 
-}
-.footer { /* mettre un fond gris en mettant le texte en blanc et ajouter de l'espace */
-  background-color: #353535; 
-  padding: 20px; 
-  color: white; 
-  margin-top: -13px;
-}
-.footer__link { /* ajuster les liens des textes en mettant des espacements */
-  list-style: none; 
-  padding: 0;
-  margin: 0; 
-  display: flex; 
-  flex-direction: column; 
-  gap: 10px; 
-}
-.footer__link li { /* enlever la marge des li */
-  margin: 0; 
-}
-.footer__link a { /* texte des liens en blanc */
-  color: white; 
-  text-decoration: none; 
-}
-.footer__link a:hover {
-  text-decoration: underline; 
-}
-
-.btn-like {
-  background: none; /* Pas de fond pour que le bouton soit transparent */
-  border: none; /* Pas de bordure pour un look propre */
-  cursor: pointer; /* Change le curseur pour indiquer que c'est cliquable */
-  font-size: 24px; /* Taille de l'icône */
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  transition: color 0.3s ease; /* Transition douce pour la couleur */
-}
-
+/* Icon Button */
 .btn-like i {
-  transition: color 0.3s ease; /* Transition de la couleur au survol */
+  transition: color 0.3s ease; /* Transition douce sur la couleur de l'icône */
 }
 
 .btn-like:hover i {
-  /* Effet de dégradé en fond avec des couleurs définies */
-  background: linear-gradient(to left, #9356dc, #b35cdc, #cf64dc, #e86edb, #ff79da);
-  
-  /* Utilisation de -webkit- pour les navigateurs basés sur WebKit (Safari, Chrome) */
-  -webkit-background-clip: text; /* Applique le dégradé uniquement au texte */
-  -webkit-text-fill-color: transparent; /* Rend le texte transparent pour voir le dégradé */
-
-  /* Application du poids de la police pour plus de contraste au survol */
+  background: linear-gradient(to left, #9356dc, #b35cdc, #cf64dc, #e86edb, #ff79da); /* Effet de dégradé au survol sur l'icône */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   font-weight: bold;
+  transition: background 2s ease, opacity 0.3s ease, background-size 2s ease;
+}
+
+/* Icon Mobil */
+.icon-mobil {
+  color: #9356DC; 
+}
+
+.etape:hover .icon-mobil {
+  color: #FF79DA; 
+}
+
+/* Footer */
+.footer-title {
+  font-family: "Shrikhand", cursive;
+  margin-bottom: 20px; 
+}
+
+.footer {
+  background-color: #353535;
+  padding: 20px;
+  color: white;
+  margin-top: -13px; 
+}
+
+.footer__link {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Espacement entre les éléments du footer */
+  
+  li {
+    margin: 0;
+  }
+
+  a {
+    color: white;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline; /* Décoration de texte au survol des liens */
+    }
+  }
+}
+
+
+@media (min-width: 768px){
+  .footer__link {
+    flex-direction: row;
+    justify-content: flex-start; /* Aligne les liens à gauche */
+    gap: 15px; /* Espacement réduit entre les liens */
+  }
+}
+
+@media (min-width: 1444px) {
+  .footer__link {
+    flex-direction: row;
+    justify-content: flex-start; /* Aligne les liens à gauche */
+    gap: 20px; /* Espacement réduit entre les liens */
+    order: 1;
+    margin-left: 47%;
+    margin-top: -45px;
+    margin-bottom: 19px;
+  }
+
+  .footer-title {
+    order: 2;
+    margin-left: 87%;
+    margin-top: 12px;
+  }
+
+  .footer__link-fa {
+    margin-right: 50px !important; /* Positionnement de certains éléments avec priorité */
+  }
+}
+
+
+@media (max-width: 1440px) and (min-width: 769px) {
+  .footer__link,
+  .footer-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 0;
+    margin-right: 0; /* Centre le contenu entre 769px et 1440px */
+  }
+
+  .footer__link {
+    flex-direction: row;
+    gap: 20px; /* Espacement ajusté */
+  }
+
+  .footer__link-fa {
+    margin-top: -10px; /* Ajuste la position du footer */
+  }
+}
+
+
+@media (max-width: 1625px) and (min-width: 1445px) {
+  .footer__link,
+  .footer-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 0;
+    margin-right: 0; /* Centrer le contenu dans cet intervalle de taille */
+  }
+
+  .footer__link {
+    flex-direction: row;
+    gap: 20px; /* Espacement ajusté entre les liens */
+    margin-top: -12px; /* Ajuste la position du footer */
+  }
 }
