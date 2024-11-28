@@ -1,4 +1,6 @@
 @import "global";
+@import "footer";
+@import "btn-like-restaurant";
 
 //navbar
 .navbar{
@@ -339,4 +341,13 @@
     animation-delay: 1.2s;  
   }
   
-  
+  @media (max-width: 375px){
+    .heart i{
+        margin-left: -90px;
+        margin-top: -2px
+    }
+    .menu__title{
+     margin-top: 31px;
+     font-size: 24px;
+    }
+  }

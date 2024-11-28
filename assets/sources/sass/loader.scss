@@ -1,0 +1,62 @@
+/* Loader Styles */
+.loader-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(5px); /* Flou de l'arrière-plan */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+/* Initialement visible */
+.loader-container.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Cacher le loader (par exemple après une animation) */
+.loader-container.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* Animation du loader */
+.loader {
+    width: 50px;
+    height: 50px;
+    border: 6px solid rgba(0, 0, 0, 0.1);
+    border-top-color: #9356dc;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+/* Animation de rotation */
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Masquer après un délai */
+.loader-container.hidden {
+    display: none; /* Supprime complètement après la transition */
+}
+
+/* Animation pour cacher le loader */
+.loader-container {
+    animation: fadeOut 1s ease 1s forwards; /* Démarre après 3 secondes */
+}
+
+/* Animation fade out */
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+        visibility: hidden;
+    }
+}

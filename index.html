@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <!--lien google font -->
+   <!--lien googl font -->
    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
    <link href="https://fonts.googleapis.com/css2?family=Shrikhand&display=swap" rel="stylesheet">
  
@@ -24,7 +24,8 @@
 
         <!--section restaurant paris bellvile -->
         <section class="restaurant">
-            <address class="restaurant__address"><i class="fa-solid fa-location-dot"></i> Paris, Belleville</address>
+            <address class="restaurant__address"><i class="fa-solid fa-location-dot"></i> Paris, bellvile</address>
+           
             <h1>Réservez le menu qui vous convient</h1>
             <p class="restaurant__description">Découvrez des restaurants d'exception, séléctionnés par nos soins.</p>
             <a href="#cards" class="btn">Explorer nos restaurants</a>
@@ -63,7 +64,11 @@
                     <a href="menu_la_palette_du_gout.html"> <h3 class="card__title">La palette du goût</h3></a>
                     <h4 class="card__lieux">Ménilmontant</h4>
                 </div>
-                <button class="btn-like"><i class="fa-regular fa-heart"></i></button>
+                <div class="heart i">
+                    <i class="fa-regular fa-heart my-heart-empty"></i>
+                    <i class="fa-solid fa-heart my-heart-full"></i>
+                </div>
+               
             </div>
             <span class="card__new ">Nouveau</span>
         </article>
@@ -72,14 +77,23 @@
                 <img  class="card__img" src="images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg" alt="La note enchantée">
             </a>
             <div class="card__body">
+
                 <div class="card__description">
                     <a href="menu_la_note_enchante.html"> <h3 class="card__titl">La note enchantée</h3></a>
                     <h4 class="card__lieux">Charonne</h4>
                 </div>
-                <button class="btn-like"><i class="fa-regular fa-heart"></i></button>
+
+                <div class="heart i">
+                    <i class="fa-regular fa-heart my-heart-empty"></i>
+                    <i class="fa-solid fa-heart my-heart-full"></i>
+                </div>
+
             </div>
+
             <span class="card__new ">Nouveau</span>
+
         </article>
+
         <article class="card">
             <a href="menu_a_la_francaise.html">  <!--2 card (article)  ajou de la nouvelle page index menu3 --> 
                 <img  class="card__img" src="images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg" alt="À la française">
@@ -89,7 +103,12 @@
                     <a href="menu_a_la_francaise.html"> <h3 class="card__titl">À la française</h3></a>
                     <h4 class="card__lieux">Cité Rouge</h4>
                 </div>
-                <button class="btn-like"><i class="fa-regular fa-heart"></i></button>
+
+                <div class="heart i">
+                    <i class="fa-regular fa-heart my-heart-empty"></i>
+                    <i class="fa-solid fa-heart my-heart-full"></i>
+                </div>
+
             </div>
         </article>
         <article class="card">
@@ -101,7 +120,12 @@
                     <a href="menu_le_delice_des_sens.html"> <h3 class="card__titl">Le délice des sens</h3></a>
                     <h4 class="card__lieux">Cité Rouge</h4>
                 </div>
-                <button class="btn-like"><i class="fa-regular fa-heart"></i></button>
+
+                <div class="heart i">
+                    <i class="fa-regular fa-heart my-heart-empty"></i>
+                    <i class="fa-solid fa-heart my-heart-full"></i>
+                </div>
+                
                
             </div>
         </article>
@@ -109,18 +133,35 @@
  </section>
 
  <!--footer-->
- <footer class="footer">
-    <h2 class="footer-title">ohmyfood</h2>
-    <ul class="footer__link">
-        <li><a href="#"><i class="fa-solid fa-utensils"></i>  Proposer un restaurant</a></li>
-        <li><a href="#"><i class="fa-solid fa-handshake-angle"></i> Devenir partenaire</a></li>
-        <li><a href="#">Mentions légales</a></li>
-        <li><address><a href="mailto:exemple@domaine.com">Contact</a></address></li>
-    </ul>
 
+
+<footer>
+    <h3 class="omffooter">ohmyfood</h3>
+    <div class="footer-contenair">
+        <a  href="#">
+            <i class="fa-solid fa-utensils"></i>
+            Proposer un restaurant
+        </a>
+        <a href="#">
+            <i class="fa-solid fa-handshake-angle"></i>
+            Devenir partenaire
+        </a>
+        <a  href="#">
+            Mentions légales
+        </a>
+        <a  href="mailto:ohmyfood@outlook.com">
+            Contact
+        </a>
+    </div>
 </footer>
-
 </main>
+<!-- Loader -->
+<div class="loader">
+    <div class="loader__content">
+        <p class="loader__text">OhmyFood</p> <!-- Texte avec effet néon -->
+        <i class="fa-solid fa-utensils loader__icon"></i> <!-- Icône -->
+    </div>
+</div>
 
 </body>
 </html>
