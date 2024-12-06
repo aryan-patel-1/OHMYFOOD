@@ -1,28 +1,20 @@
-
-
-.heart i{
-
-   position: absolute;
+.heart i {
+    position: absolute;
     cursor: pointer;
     font-size: 30px;
-
-   margin-top: -15px
-
- 
+    margin-top: -15px;
 }
 
-
-.my-heart-full{
+.my-heart-full {
     opacity: 0;
+    color: transparent; /* Toujours transparent */
+    background-image: linear-gradient(#9356dc, #b35cdc, #cf64dc, #e86edb, #ff79da); /* Dégradé dès l'état initial */
+    background-clip: text;
     transition-property: all;
-    transition-duration: 1s;
-    
-    &:hover{
+    transition-duration: 2s;
+
+    &:hover {
         opacity: 1;
-        color: #9356DC;
-        background-image: linear-gradient(#9356dc, #b35cdc, #cf64dc, #e86edb, #ff79da) ;
-        background-clip: text;
-        color: transparent;
-        
+        background-image: linear-gradient(#9356dc, #b35cdc, #cf64dc, #e86edb, #ff79da); /* Même dégradé pour continuité */
     }
 }

@@ -95,10 +95,6 @@ a {
   color: #9356DC;
 }
 
-.etape:last-child .icon-mobil {
-  color: #9356DC; /* Restaure la couleur par défaut sur le dernier élément */
-}
-
 footer {
   display: flex;
   width: 100%;
@@ -193,15 +189,15 @@ footer i {
 
 .my-heart-full {
   opacity: 0;
+  color: transparent; /* Toujours transparent */
+  background-image: linear-gradient(#9356dc, #b35cdc, #cf64dc, #e86edb, #ff79da); /* Dégradé dès l'état initial */
+  background-clip: text;
   transition-property: all;
-  transition-duration: 1s;
+  transition-duration: 2s;
 }
 .my-heart-full:hover {
   opacity: 1;
-  color: #9356DC;
-  background-image: linear-gradient(#9356dc, #b35cdc, #cf64dc, #e86edb, #ff79da);
-  background-clip: text;
-  color: transparent;
+  background-image: linear-gradient(#9356dc, #b35cdc, #cf64dc, #e86edb, #ff79da); /* Même dégradé pour continuité */
 }
 
 .navbar {

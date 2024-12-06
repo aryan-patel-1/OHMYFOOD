@@ -1,25 +1,26 @@
 
 
-.heart i{
+.heart i {
     position: absolute;
     cursor: pointer;
     font-size: 30px;
-    right: 10px;    right: 10px; 
-    margin-top: -16px
+    right: 10px;
+    margin-top: -16px;
 }
 
-
-.my-heart-full{
+.my-heart-full {
     opacity: 0;
     transition-property: all;
     transition-duration: 2s;
-    
-    &:hover{
+    color: transparent; /* Rendre le texte transparent */
+    background-image: linear-gradient(#9356dc, #b35cdc, #cf64dc, #e86edb, #ff79da);
+    background-clip: text; /* Dégradé par défaut */
+
+    &:hover {
         opacity: 1;
-        color: #9356DC;
-        background-image: linear-gradient(#9356dc, #b35cdc, #cf64dc, #e86edb, #ff79da) ;
+        color: transparent; /* Toujours transparent */
+        background-image: linear-gradient(#9356dc, #b35cdc, #cf64dc, #e86edb, #ff79da);
         background-clip: text;
-        color: transparent;
-        
+        -webkit-background-clip: text;
     }
 }
