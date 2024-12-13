@@ -251,7 +251,7 @@ footer i {
 .my-heart-full {
   opacity: 0;
   transition-property: all;
-  transition-duration: 2s;
+  transition-duration: 1s;
   color: transparent; /* Rendre le texte transparent */
   background-image: linear-gradient(#9356dc, #b35cdc, #cf64dc, #e86edb, #ff79da);
   background-clip: text; /* Dégradé par défaut */
